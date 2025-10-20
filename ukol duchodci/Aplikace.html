@@ -1,0 +1,295 @@
+<!DOCTYPE HTML>
+<html lang="cs">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>duchodci.v.nouzi.cz</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f4f4f4;
+        margin: 0;
+        padding: 0;
+      }
+
+      header {
+        background: #FFCC66;
+        padding: 20px 0;
+        text-align: center;
+      }
+
+      header h1 {
+        color: #3300FF;
+        margin: 0 0 10px;
+      }
+
+      header a {
+        color: #200060;
+        text-decoration: none;
+        padding: 10px 20px;
+        margin: 0 10px;
+      }
+
+      header a:hover {
+        background: #3300FF;
+        color: #fff;
+        border-radius: 5px;
+      }
+
+      .content-section {
+        max-width: 1200px;
+        margin: 40px auto;
+        padding: 20px;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      /* Mobilní telefon */
+      .phone {
+        width: 280px;
+        height: 500px;
+        margin: 20px auto;
+        background: #222;
+        border-radius: 30px;
+        padding: 20px;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+        position: relative;
+      }
+
+      /* Hlavní obrazovka mobilu */
+      .screen {
+        background: url('img/screen.jpg') no-repeat center center; ;
+        border-radius: 20px;
+        width: 89%;
+        height: 90%;
+        padding: 15px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 15px;
+        align-items: center;
+        justify-items: center;
+        grid-template-rows: repeat(3, 1fr);
+      }
+
+      /* Každá aplikace */
+      .app {
+        width: 70px;
+        height: 70px;
+        background:NONE;
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 28px;
+        color: #200060;
+        cursor: pointer;
+        transition: transform 0.2s, background 0.3s;
+        overflow: hidden;
+      }
+
+      .app img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 15px;
+      }
+
+      .app:hover {
+        background: #3300FF;
+        color: #fff;
+        transform: scale(1.05);
+      }
+
+      /* Detaily aplikací */
+      .app-details {
+        display: none;
+        margin-top: 20px;
+        padding: 15px;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: left;
+      }
+
+      .app-details.show {
+        display: block;
+      }
+
+      /* Náhled aplikace (demo mobil dole) */
+      .phone.demo {
+        width: 280px;
+        height: 500px;
+        padding: 20px;
+      }
+
+      .phone.demo .screen {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .phone.demo .screen img {
+        width: 100%;
+        height: 500px;
+        border-radius: 10px;
+      }
+
+      footer {
+        background: #FFCC66;
+        padding: 20px;
+        margin-top: 40px;
+      }
+
+      footer p {
+        color: #200060;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>ONLINE SENIOR</h1>
+      <p>
+        <a href="Duchodci.html">DOMŮ</a>
+        <a href="#">NĚCO O NÁS</a>
+        <a href="#">POMOC</a>
+        <a href="#">KONTAKTY</a>
+      </p>
+    </header>
+
+    <div class="content-section">
+      <h2>Seznam aplikací pro seniory</h2>
+      <p>Klikněte na aplikaci na mobilu a dozvíte se více.</p>
+
+      <!-- HLAVNÍ MOBIL -->
+      <div class="phone">
+        <div class="screen">
+          <!-- Nahraď obrázky svými ikonami (70×70px ideálně čtvercové) -->
+          <div class="app" onclick="showAppDetails('app1')"><img src="img/navigace.png" alt="Navigace"></div>
+          <div class="app" onclick="showAppDetails('app2')"><img src="img/fotka.png" alt="Videohovory"></div>
+          <div class="app" onclick="showAppDetails('app3')"><img src="img/kalendar.png" alt="Kalendář"></div>
+          <div class="app" onclick="showAppDetails('app4')"><img src="img/pngegg.png" alt="Bankovnictví"></div>
+          <div class="app" onclick="showAppDetails('app5')"><img src="img/zprava.png" alt="Zprávy"></div>
+          <div class="app" onclick="showAppDetails('app6')"><img src="img/help.png" alt="Zdraví"></div>
+          <div class="app" onclick="showAppDetails('app7')"><img src="img/pocas01.jpg" alt="Počasí"></div>
+          <div class="app" onclick="showAppDetails('app8')"><img src="img/tele.jpg" alt="Fotoaparát"></div>
+          <div class="app" onclick="showAppDetails('app9')"><img src="img/seznam.png" alt="seznam"></div>
+        </div>
+      </div>
+
+      <!-- Detailní sekce -->
+      <div id="app1" class="app-details">
+        <h3>Aplikace 1 – Navigace</h3>
+        <div class="phone demo">
+          <div class="screen">
+            <img src="img/maps.jpg" alt="Screenshot navigační aplikace">
+          </div>
+        </div>
+        <p>V horní části zadáte adresu, uprostřed je mapa a dole tlačítko „Start“ spustí navigaci krok za krokem.</p>
+      </div>
+
+      <div id="app2" class="app-details">
+        <h3>Aplikace 2 – Kamera</h3>
+        <div class="phone demo">
+          <div class="screen">
+            <img src="img/photo03.jpg" alt="Screenshot videohovor aplikace">
+          </div>
+        </div>
+        <p>Umožňuje snadno pořizovat fotky. Dole je tlačítko spouště, vlevo volba galerie, vpravo přepnutí na přední kameru.</p>
+      </div>
+
+      <div id="app3" class="app-details">
+        <h3>Aplikace 3 – Kalendář a připomínky</h3>
+        <div class="phone demo">
+          <div class="screen">
+            <img src="img/kalendar01.png" alt="Screenshot kalendář aplikace">
+          </div>
+        </div>
+        <p>Vidíte měsíční přehled (kalendář s daty) nahoře, níže seznam úkolů nebo událostí pro daný den. Tlačítko „+“ umožní vložit novou připomínku nebo schůzku.</p>
+      </div>
+
+      <div id="app4" class="app-details">
+        <h3>Aplikace 4 – Bankovnictví</h3>
+        <div class="phone demo">
+          <div class="screen">
+            <img src="img/banka01.jpg" alt="Screenshot bankovní aplikace">
+          </div>
+        </div>
+        <p>Nahoře je zůstatek, níže poslední platby. Tlačítko „Poslat“ slouží k zadání převodu, „Karty“ zobrazí vaše karty.když tak banka má svoje vlastní vysvětlení takže se není čeho bát</p>
+      </div>
+
+      <div id="app5" class="app-details">
+        <h3>Aplikace 5 – Zprávy</h3>
+        <div class="phone demo">
+          <div class="screen">
+            <img src="img/text01.jpg" alt="zprávy">
+          </div>
+        </div>
+        <p>Hlavní stránka ukazuje zprávy, kliknutím na zprávu otevřete celý text, a mužete psát  </p>
+      </div>
+
+      <div id="app6" class="app-details">
+        <h3>Aplikace 6 – Zachránka</h3>
+        <div class="phone demo">
+          <div class="screen">
+            <img src="img/pomoc02.jpg" alt="Screenshot zdravotní / fitness aplikace">
+          </div>
+        </div>
+        <p>Uprostřed je velké červené kolečko "155"když na to kliknete dovoláte se pomoci a oni budou vědět přesně kde jste a urychlí to vše</p>
+      </div>
+      
+      <!-- Detail pro Počasí -->
+      <div id="app7" class="app-details">
+        <h3>Aplikace 7 – Počasí</h3>
+        <div class="phone demo">
+          <div class="screen">
+            <img src="img/teplota.jpg" alt="Screenshot aplikace Počasí">
+          </div>
+        </div>
+        <p>Ukazuje aktuální teplotu, předpověď na týden a srážky. Kliknutím na město se zobrazí detailní údaje.</p>
+      </div>
+
+      <!-- Detail pro kontakty -->
+      <div id="app8" class="app-details">
+        <h3>Aplikace 8 – Kontakty</h3>
+        <div class="phone demo">
+          <div class="screen">
+            <img src="img/volej.jpg" alt="Screenshot telfonu">
+          </div>
+        </div>
+        <p>Nahoře si mužete vyhledávat kontakty a nasledně na ně kliknou a zavolat nebo si nahoře přidat kontakt</p>
+      </div>
+
+      <!-- Detail pro Seznam -->
+      <div id="app9" class="app-details">
+        <h3>Aplikace 9 – Seznam</h3>
+        <div class="phone demo">
+          <div class="screen">
+            <img src="img/seznam01.jpg" alt="Screenshot hudební aplikace">
+          </div>
+        </div>
+        <p>Umožnuje vyhledavat na internetu, koukat na emaily,či počasí</p>
+      </div>
+      
+    </div>
+
+    <footer>
+      <p>Kontakty: email@example.com | +420 123 456 789</p>
+    </footer>
+
+    <script>
+      function showAppDetails(appId) {
+        document.querySelectorAll('.app-details').forEach(app => {
+          app.classList.remove('show');
+        });
+        document.getElementById(appId).classList.add('show');
+      }
+    </script>
+  </body>
+</html>
